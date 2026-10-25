@@ -1,0 +1,105 @@
+package com.getjobs.application.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+/**
+ * boss_data 表实体
+ */
+@Data
+@TableName("boss_data")
+public class BossJobDataEntity {
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
+    @TableField("encrypt_id")
+    private String encryptId;
+
+    @TableField("encrypt_user_id")
+    private String encryptUserId;
+
+    @TableField("company_name")
+    private String companyName;
+
+    @TableField("job_name")
+    private String jobName;
+
+    @TableField("salary")
+    private String salary;
+
+    @TableField("location")
+    private String location;
+
+    @TableField("experience")
+    private String experience;
+
+    @TableField("degree")
+    private String degree;
+
+    @TableField("hr_name")
+    private String hrName;
+
+    @TableField("hr_position")
+    private String hrPosition;
+
+    @TableField("hr_active_status")
+    private String hrActiveStatus;
+
+    @TableField("delivery_status")
+    private String deliveryStatus; // 默认 未投递 / 已投递 / 已过滤 / 投递失败
+
+    @TableField("job_description")
+    private String jobDescription;
+
+    @TableField("job_url")
+    private String jobUrl;
+
+    @TableField("recruitment_status")
+    private String recruitmentStatus;
+
+    @TableField("company_address")
+    private String companyAddress;
+
+    @TableField("industry")
+    private String industry;
+
+    @TableField("introduce")
+    private String introduce;
+
+    @TableField("financing_stage")
+    private String financingStage;
+
+    @TableField("company_scale")
+    private String companyScale;
+
+    @TableField("created_at")
+    private LocalDateTime createdAt;
+
+    @TableField("updated_at")
+    private LocalDateTime updatedAt;
+
+    /** AI 岗位相关性评分（0-100）。旧数据为空表示尚未评分。 */
+    @TableField("ai_score")
+    private Integer aiScore;
+
+    /** AI 评分决策：apply / review / skip。 */
+    @TableField("ai_decision")
+    private String aiDecision;
+
+    /** JSON/逗号分隔的命中技能，便于前端直接展示。 */
+    @TableField("matched_skills")
+    private String matchedSkills;
+
+    /** JSON/逗号分隔的缺失技能，便于前端直接展示。 */
+    @TableField("missing_skills")
+    private String missingSkills;
+
+    /** AI 给出的匹配理由或降级说明。 */
+    @TableField("relevance_reason")
+    private String relevanceReason;
+}

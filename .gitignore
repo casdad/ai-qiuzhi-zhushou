@@ -1,0 +1,129 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+config.yaml
+.git-rewrite
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+.idea
+*.sh
+CLAUDE.md
+.claude
+nul
+dist.zip
+db/
+# Playwright
+.playwright/
+ms-playwright/
+playwright-*
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+### VS Code ###
+.vscode/
+data.json
+src/main/java/boss/data.json
+merge_prs.log
+### Mac OS ###
+.DS_Store
+cookie.json
+# 各平台登录 Cookie（cookies/<platform>.json，含登录态，绝对不能提交）
+cookies/
+.env
+chromedriver
+*.jpg
+
+# Database files
+db/
+*.db
+
+# Frontend build output
+dist/
+
+# Gradle cache
+.gradle/
+# 持久化浏览器用户数据（含登录态，绝对不能提交）
+browser-data/
+
+# 接管本机 Chrome 用的独立配置目录（含登录态，不入库）
+chrome-profile/
+
+# 本地环境变量与私密配置，仅允许提交无凭据的示例
+.env.*
+!.env.example
+!.env.*.example
+*.local
+config.local.*
+credentials*.json
+secrets*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ed25519*
+.ssh/
+
+# 会话、个人求职资料、数据库旁路文件和运行日志
+storage-state*.json
+storageState*.json
+auth-state*.json
+*cookies*.json
+resume/
+resumes/
+简历/
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
+logs/
+tmp/
+
+# 编译产物、依赖与开发工具缓存
+node_modules/
+.next/
+out/
+bin/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+.venv/
+venv/
+.pytest_cache/
+.codex/
+
+# 历史截图可能含姓名、简历、通知二维码或配置，公开版本不收录
+docs/imgs/
+src/main/resources/images/
+src/main/resources/img.png
+src/main/resources/xpathHelper.crx
+
+# Maven 本机配置不属于本项目的 Gradle 构建输入
+src/main/resources/settings.xml
+
+# 上游维护者专用的贡献协议和提交规则不应用于本整理版
+CLA.md
+.githooks/
+.gitmessage
+.github/workflows/commit-lint.yml

@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* 招聘平台主题色。页面用 platform-<name> 挂在 <body> 上，
+       由 .platform-accent 派生出一整套图标底色/描边/文字色，
+       避免每个页面各写一份 bg-teal-500 / text-violet-600。 */
+    --brand: 174 84% 39%;
+    --brand-soft: 174 84% 96%;
+    --brand-soft-strong: 174 60% 90%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --brand-soft: 174 40% 12%;
+    --brand-soft-strong: 174 40% 18%;
+  }
+
+  /* Boss 直聘 —— 青绿 */
+  .platform-boss {
+    --brand: 174 84% 39%;
+    --brand-soft: 174 84% 96%;
+    --brand-soft-strong: 174 60% 90%;
+  }
+  /* 51job —— 蓝 */
+  .platform-51job {
+    --brand: 217 91% 60%;
+    --brand-soft: 217 91% 96%;
+    --brand-soft-strong: 217 80% 90%;
+  }
+  /* 猎聘 —— 紫 */
+  .platform-liepin {
+    --brand: 258 80% 60%;
+    --brand-soft: 258 90% 97%;
+    --brand-soft-strong: 258 80% 92%;
+  }
+  /* 智联招聘 —— 品红 */
+  .platform-zhilian {
+    --brand: 322 78% 52%;
+    --brand-soft: 322 90% 97%;
+    --brand-soft-strong: 322 75% 92%;
+  }
+
+  .dark.platform-boss {
+    --brand: 174 70% 45%;
+    --brand-soft: 174 45% 12%;
+    --brand-soft-strong: 174 45% 18%;
+  }
+  .dark.platform-51job {
+    --brand: 217 90% 70%;
+    --brand-soft: 217 45% 14%;
+    --brand-soft-strong: 217 45% 20%;
+  }
+  .dark.platform-liepin {
+    --brand: 258 90% 75%;
+    --brand-soft: 258 40% 15%;
+    --brand-soft-strong: 258 40% 22%;
+  }
+  .dark.platform-zhilian {
+    --brand: 322 85% 74%;
+    --brand-soft: 322 40% 15%;
+    --brand-soft-strong: 322 40% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: #f4f7fb;
+    background-image: linear-gradient(180deg, #f8fafc 0%, #eef2f8 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgb(14 165 233 / 0.22);
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dark body {
+    background-color: #0b1220;
+    background-image: linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
+  }
+}
+
+@layer components {
+  /* 平台主题派生的品牌色工具类。
+     页面不再直接写 bg-teal-50 / text-violet-600，统一走这里，
+     换平台只改 <body> 上的 platform-* 类。 */
+  .brand-tint {
+    background-color: hsl(var(--brand-soft));
+  }
+
+  .brand-ring {
+    background-color: hsl(var(--brand));
+  }
+
+  .brand-text {
+    color: hsl(var(--brand));
+  }
+
+  .brand-border {
+    border-color: hsl(var(--brand) / 0.35);
+  }
+
+  .brand-bar {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--brand) / 0.1),
+      transparent 62%
+    );
+  }
+
+  /* 表单控件的公共外观。Input / Select / Textarea / MultiSelect 共用同一套，
+     消除四处各写一遍 focus 环和禁用态的差异。 */
+  .field-base {
+    @apply h-10 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm
+      transition-colors placeholder:text-slate-400
+      hover:border-slate-300
+      focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20
+      disabled:cursor-not-allowed disabled:opacity-60
+      dark:border-slate-700 dark:bg-slate-950/60 dark:hover:border-slate-600;
+  }
+
+  .hint {
+    @apply text-xs leading-5 text-slate-500 dark:text-slate-400;
+  }
+}
+
+@layer utilities {
+  /* 强制覆盖 input 自动填充样式 */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* 图表 / 列表进入时的一次性淡入。原先 4 个分析页给每张卡片
+     叠了 slide-in-from-bottom-3..8 的逐级延迟，读起来像在排队，
+     统一成一个克制的淡入上移。 */
+  .rise-in {
+    animation: rise-in 0.24s ease-out both;
+  }
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-slate-200/70 dark:bg-slate-800/70;
+  }
+}
