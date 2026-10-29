@@ -6,6 +6,27 @@ AI 求职助手是一个在本地运行的求职管理工具，使用 Java 21、
 
 本整理版基于上游 GET JOBS 项目，保留既有业务逻辑，补充环境变量读取、空白数据库初始化和发布前的隐私检查。项目名称、说明和使用文档使用中文；GitHub 仓库地址使用拼音标识 `ai-qiuzhi-zhushou`。
 
+## 界面预览
+
+<p align="center">
+  <img src="./docs/images/01-services.png" alt="服务与通知配置界面" width="900">
+</p>
+
+<p align="center"><em>服务与通知：配置 AI 服务与企业微信通知</em></p>
+
+<p align="center">
+  <img src="./docs/images/02-job-profile.png" alt="岗位画像配置界面" width="900">
+</p>
+
+<p align="center"><em>岗位画像：设置求职方向、筛选条件与投递偏好</em></p>
+
+<p align="center">
+  <img src="./docs/images/03-boss-auto-apply.png" alt="BOSS 直聘配置界面" width="900">
+</p>
+
+<p align="center"><em>BOSS 直聘：配置发送模式与岗位投递意向</em></p>
+
+
 ## 功能说明
 
 | 功能 | 说明 |
